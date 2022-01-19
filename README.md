@@ -4,7 +4,7 @@
 
 ## Prerequisites
 
-You'll need `serverless` installed globally, and `serverless-offline` installed into your project before running this wrapper.  
+You'll need `serverless` installed globally, and `serverless-offline` installed into your project before running this wrapper.
 
 ## Install
 
@@ -19,6 +19,7 @@ There are two parameters that are passed to the wrapper, `directory` and `port`w
 ```bash
 serverless-offline-multi --directory service-mailing --port 3001
 ```
+
 These parameters can be repeated (in pairs) for multiple services, as follows:
 
 ```bash
@@ -27,12 +28,23 @@ serverless-offline-multi --directory service-mailing --port 3001 --directory ser
 
 ## HTTP Port & Lambda Port
 
-* By default, `httpPort` is always the same as `http`.
-* `lambdaPort` is always `httpPort/http` + 1000. Example, running with `--port 3004` will result in: `http: 3004`, `httpPort: 3004` and `lambdaPort: 4004` (port + 1000 to avoid conflict)
+- By default, `httpPort` is always the same as `http`.
+- `lambdaPort` is always `httpPort/http` + 1000. Example, running with `--port 3004` will result in: `http: 3004`, `httpPort: 3004` and `lambdaPort: 4004` (port + 1000 to avoid conflict)
 
 ## Contributing
+
 Contributions are very welcome, and I will gladly merge in features/bug fixes.
 
 ## License
 
 MIT
+
+# Credits
+
+This is a forked project from [this repo](https://github.com/isitgeorge/serverless-offline-multi) with the following changes:
+
+- Remove argument port and using defaults setted in serverless file
+
+- Using path module for handling paths
+
+- Not installing it globaly
